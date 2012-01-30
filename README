@@ -1,0 +1,26 @@
+Webhook-Mailer: A simple example of using Stripe webhooks
+---------------------------------------------------------
+
+This example was built on heroku, but should be easily deployable in any
+environment that can support Ruby and rack.
+
+The app sends an email anytime an invoice.payment_succeeded Stripe event 
+webhook is received. 
+
+To deploy on heroku:
+
+1. Create a new heroku app
+	heroku create <APP_NAME>
+
+2. Add the mailgun add-on 
+	heroku addons:add mailgun:starter
+
+3. Add your stripe api key to your heroku config environment
+	https://manage.stripe.com/#account/apikeys
+	heroku config:add STRIPE_SECRET_KEY=<YOUR_KEY>
+
+4. Add your webhook url to your stripe dashboard
+	https://manage.stripe.com/#account/webhooks
+
+5. Customize your email body
+6. Deploy your app to heroku!
