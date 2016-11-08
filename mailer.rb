@@ -50,7 +50,7 @@ def format_stripe_timestamp(timestamp)
 end
 
 def payment_received_body(invoice, customer)
-  subscription = invoice.lines.subscriptions[0]
+  subscription = invoice.lines.data[0]
   <<EOF
 Dear #{customer.email}:
 
